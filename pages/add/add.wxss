@@ -1,0 +1,5 @@
+/* pages/add/add.wxss */
+
+.addboard button {
+    margin-top: 20rpx;
+}

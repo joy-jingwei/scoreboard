@@ -1,0 +1,7 @@
+/* pages/mylist/mylist.wxss */
+.item {
+    font-size: 36rpx;
+    height: 96rpx;
+    line-height: 96rpx;
+    padding-left: 40rpx;
+}

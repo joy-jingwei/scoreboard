@@ -1,0 +1,6 @@
+<view class="container">
+  <view class="addboard">
+    <input placeholder="请输入风云榜名称" value="{{title}}" focus="{{focus}}" bindinput="titleInput" />
+    <button bindtap="addTap" disabled="{{disabled}}">创建</button>
+  </view>
+</view>

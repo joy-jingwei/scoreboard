@@ -1,0 +1,7 @@
+<view class="itemlist">
+  <block wx:for="{{mylist}}" wx:for-item="item" wx:key="*this">
+    <view bindtap="itemTap" data-boardid="{{item.boardid}}" data-title="{{item.title}}" class="item">
+        <text>{{item.title}}</text>
+    </view>
+  </block>
+</view>

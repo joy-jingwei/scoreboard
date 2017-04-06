@@ -1,0 +1,182 @@
+/* pages/item/item.wxss */
+
+.nav {
+    height: 128rpx;
+    clear: both;
+}
+
+.nav view {
+    float: left;
+    height: 128rpx;
+    line-height: 128rpx;
+    text-align: center;
+    border-bottom: 1rpx solid gray;
+}
+
+.nav view.highlight {
+    border-bottom: 1rpx solid white;
+}
+
+.nav .rank {
+    width: 50%;
+}
+
+.nav .detail {
+    width: 50%;
+}
+
+
+
+.score.positive {
+    color: red;
+}
+.score.negative {
+    color: green;
+}
+.score.zero {
+    color: gray;
+}
+
+
+
+
+.useritem {
+    height: 128rpx;
+    clear: both;
+    padding-left: 20rpx;
+    padding-right: 20rpx;
+}
+
+.useritem view {
+    float: left;
+    height: 128rpx;
+    line-height: 128rpx;
+}
+
+.useritem text {
+    font-size: 32rpx;
+}
+
+.useritem .rank {
+    width: 60rpx;
+    text-align: right;
+    padding-right: 20rpx;
+}
+
+.useritem .avatar image {
+    width: 64rpx;
+    height: 64rpx;
+    border-radius: 50%;
+    vertical-align: middle;
+}
+
+.useritem .name {
+    padding-left: 20rpx;
+}
+
+.useritem .score input {
+    margin-top: 32rpx;
+    width: 80rpx;
+}
+
+.useritem .score {
+    float: right;
+    text-align: right;
+    padding-right: 20rpx;
+}
+
+
+
+
+.recorditem {
+    clear: both;
+    padding-top: 10rpx;
+    padding-left: 20rpx;
+    padding-right: 20rpx;
+    padding-bottom: 10rpx;
+}
+
+.recorditem text {
+    font-size: 32rpx;
+}
+
+.recorditem .title {
+    float: left;
+    height: 64rpx;
+    line-height: 64rpx;
+}
+
+.recorditem .user {
+    float: right;
+    height: 64rpx;
+    line-height: 64rpx;
+    padding-right: 20rpx;
+}
+
+.recorditem .user image {
+    width: 32rpx;
+    height: 32rpx;
+    border-radius: 50%;
+    vertical-align: middle;
+}
+
+.recorditem .scoreitem {
+    clear: both;
+    height: 64rpx;
+    line-height: 64rpx;
+    padding-left: 20rpx;
+    padding-right: 20rpx;
+}
+
+.recorditem .scoreitem view {
+    float: left;
+}
+
+.recorditem .scoreitem text {
+    font-size: 28rpx;
+}
+
+.recorditem .scoreitem .avatar image {
+    width: 48rpx;
+    height: 48rpx;
+    border-radius: 50%;
+    vertical-align: middle;
+}
+
+.recorditem .scoreitem .name {
+    padding-left: 20rpx;
+}
+
+.recorditem .scoreitem .score {
+    float: right;
+    text-align: right;
+    padding-right: 20rpx;
+}
+
+
+
+.addrecord {
+    clear: both;
+    text-align: center;
+}
+
+.addrecord input {
+    height: 96rpx;
+    line-height: 96rpx;
+}
+
+.addrecord button {
+    height: 96rpx;
+    line-height: 96rpx;
+}
+
+.addrecord text {
+    height: 96rpx;
+    line-height: 96rpx;
+    color: gray;
+    font-size: 32rpx;
+}
+
+.joinboard button {
+    margin-top: 200rpx;
+}

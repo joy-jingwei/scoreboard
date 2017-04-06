@@ -1,0 +1,95 @@
+<block wx:if="{{ismember == null}}">
+</block>
+
+<block wx:elif="{{ismember}}">
+    <view class="nav">
+        <block wx:if="{{selectedTab == 'rank'}}">
+            <view class="rank highlight"><text>总排名</text></view>
+            <view bindtap="onDetailTap" class="detail"><text>对局记录</text></view>
+        </block>
+        <block wx:elif="{{selectedTab == 'detail'}}">
+            <view bindtap="onRankTap" class="rank"><text>总排名</text></view>
+            <view class="detail highlight"><text>对局记录</text></view>
+        </block>
+        <block wx:else>
+            <view bindtap="onRankTap" class="rank"><text>总排名</text></view>
+            <view bindtap="onDetailTap" class="detail"><text>对局记录</text></view>
+        </block>
+    </view>
+
+    <block wx:if="{{selectedTab == 'rank'}}">
+        <view class="useritems">
+        <block wx:for="{{userlist}}" wx:for-item="item" wx:key="*this">
+            <view class="useritem">
+                <view class="rank"><text>{{index + 1}}</text></view>
+                <view class="avatar"><image src="{{item.userinfo.avatarUrl}}"></image></view>
+                <view class="name"><text>{{item.userinfo.nickName}}</text></view>
+                <view wx:if="{{item.score > 0}}" class="score positive"><text>+{{item.score}}</text></view>
+                <view wx:elif="{{item.score < 0}}" class="score negative"><text>{{item.score}}</text></view>
+                <view wx:else class="score zero"><text>{{item.score}}</text></view>
+            </view>
+        </block>
+        </view>
+    </block>
+    <block wx:elif="{{selectedTab == 'detail'}}">
+        <view class="recorditems">
+        <block wx:for="{{recordList}}" wx:for-item="item" wx:key="*this">
+            <view class="recorditem">
+                <view class="title"><text>{{item.title}}</text></view>
+                <view class="user"><image src="{{recordUserinfos[item.uid].avatarUrl}}"></image></view>
+                <view class="scorelist">
+                <block wx:for="{{item.detailinfo}}" wx:for-item="detail" wx:key="*this">
+                    <view class="scoreitem">
+                        <view class="avatar"><image src="{{recordUserinfos[detail.uid].avatarUrl}}"></image></view>
+                        <view class="name"><text>{{recordUserinfos[detail.uid].nickName}}</text></view>
+                        <view wx:if="{{detail.score > 0}}" class="score positive"><text>+{{detail.score}}</text></view>
+                        <view wx:elif="{{detail.score < 0}}" class="score negative"><text>{{detail.score}}</text></view>
+                        <view wx:else class="score zero"><text>{{detail.score}}</text></view>
+                    </view>
+                </block>
+                </view>
+            </view>
+        </block>
+        </view>
+    </block>
+    <block wx:else>
+        <view class="useritems">
+        <block wx:for="{{userlist}}" wx:for-item="item" wx:key="*this">
+            <view class="useritem">
+                <view class="rank"></view>
+                <view class="avatar"><image src="{{item.userinfo.avatarUrl}}"></image></view>
+                <view class="name"><text>{{item.userinfo.nickName}}</text></view>
+                <view class="score"><input data-uid="{{item.uid}}" maxlength="5" value="" bindinput="onScoreInput" /></view>
+            </view>
+        </block>
+        </view>
+    </block>
+
+    <block wx:if="{{selectedTab == 'rank'}}">
+    <view class="addrecord">
+        <button bindtap="onAddRecordTap">添加对局</button>
+    </view>
+    </block>
+    <block wx:elif="{{selectedTab == 'detail'}}">
+    <view class="addrecord">
+        <block wx:if="{{recordPage.next}}">
+            <button bindtap="onMoreRecordTap">MORE</button>
+        </block>
+        <block wx:else>
+            <text>-- END --</text>
+        </block>
+    </view>
+    </block>
+    <block wx:else>
+    <view class="addrecord">
+        <input placeholder="请输入对局名称" value="{{recordTitle}}" bindinput="onRecordTitleInput" focus="{{recordTitleFocus}}" />
+        <button bindtap="onAddRecordTap">添加</button>
+    </view>
+    </block>
+</block>
+
+<block wx:else>
+    <view class="joinboard">
+        <button bindtap="onJoinBoardTap">点击加入 {{boardinfo.title}}</button>
+    </view>
+</block>
