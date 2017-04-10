@@ -41,7 +41,7 @@ Page({
     var that = this
     if ('add' != that.data.selectedTab) {
       var date = new Date
-      that.setData({selectedTab: 'add',
+      that.setData({recordDetail:{}, selectedTab: 'add',
        recordTitle: date.getFullYear() + '-' + (date.getMonth() + 1) + '-' + date.getDate() + ' 周' + days[date.getDay()] + '局'})
     } else if (!that.data.recordTitle.trim().length) {
       wx.showModal({
