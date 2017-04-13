@@ -59,7 +59,7 @@
                 <view class="rank"></view>
                 <view class="avatar"><image src="{{item.userinfo.avatarUrl}}"></image></view>
                 <view class="name"><text>{{item.userinfo.nickName}}</text></view>
-                <view class="score"><input data-uid="{{item.uid}}" maxlength="5" value="" bindinput="onScoreInput" /></view>
+                <view class="score"><input data-uid="{{item.uid}}" maxlength="5" value="" bindinput="onScoreInput" type="number" /></view>
             </view>
         </block>
         </view>
